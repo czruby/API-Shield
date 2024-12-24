@@ -3,17 +3,20 @@
         <!-- 左侧按钮区 -->
         <el-card class="button-card">
             <el-button type="primary" @click="openDialog()">新建检测</el-button>
-            <!-- <el-button type="danger" :disabled="true">删除检测</el-button> -->
-            <div class="card_container"  v-for="detect in detectList">
-                <el-card class="detect-card" :body-style="{ padding: '0px','padding-top': '10px','padding-bottom': '10px','padding-left':'5px' }">
+            <div class="card_container" v-for="detect in detectList">
+                <el-card class="detect-card"
+                    :body-style="{ padding: '0px', 'padding-top': '10px', 'padding-bottom': '10px', 'padding-left': '5px' }">
                     <el-row>
                         <el-col :span="15" class="detect-name">{{ detect.name }}</el-col>
                         <el-col :span="3">
-                            <el-button  icon="VideoPlay" circle class="detect_btn" @click="startDetect(detect.id)"></el-button></el-col>
+                            <el-button icon="VideoPlay" circle class="detect_btn"
+                                @click="startDetect(detect.id)"></el-button></el-col>
                         <el-col :span="3">
-                            <el-button icon="Edit" circle class="detect_btn" @click="editDetect(detect.id)"></el-button></el-col>
+                            <el-button icon="Edit" circle class="detect_btn"
+                                @click="editDetect(detect.id)"></el-button></el-col>
                         <el-col :span="3">
-                            <el-button icon="Close" circle class="detect_btn" @click="deleteDetect(detect.id)"></el-button>
+                            <el-button icon="Close" circle class="detect_btn"
+                                @click="deleteDetect(detect.id)"></el-button>
                         </el-col>
                     </el-row>
                 </el-card>
@@ -59,7 +62,7 @@
                 </el-form-item>
                 <el-form-item label="检测时间" style="width: 50%;">
                     <el-date-picker v-model="form.time" type="daterange" range-separator="To" start-placeholder="开始日期"
-                    end-placeholder="结束日期" />                
+                        end-placeholder="结束日期" />
                 </el-form-item>
                 <el-form-item label="越权配置">
                     <el-input type="textarea" v-model="form.config" placeholder="请输入越权配置"></el-input>
@@ -93,7 +96,7 @@
                 </el-form-item>
                 <el-form-item label="检测时间" style="width: 50%;">
                     <el-date-picker v-model="form.time" type="daterange" range-separator="To" start-placeholder="开始日期"
-                    end-placeholder="结束日期" />                
+                        end-placeholder="结束日期" />
                 </el-form-item>
                 <el-form-item label="越权配置">
                     <el-input type="textarea" v-model="form.config" placeholder="请输入越权配置"></el-input>
@@ -153,7 +156,7 @@ const startDetect = (id) => {
 
 const editDetect = (id) => {
     console.log("编辑检测:", id);
-    const data= detectList.value.find((item) => item.id == id);
+    const data = detectList.value.find((item) => item.id == id);
     form.value = {
         id: data.id,
         name: data.name,
@@ -216,14 +219,15 @@ const editForm = () => {
 }
 
 
-.detect-name{
+.detect-name {
     font-size: 16px;
 }
+
 .detect-card {
     margin-top: 10px;
 }
 
-.detect_btn{
+.detect_btn {
     width: 20px;
     height: 20px;
     margin: 2px;

@@ -10,7 +10,7 @@
             <el-container>
                 <!-- Sidebar Menu -->
                 <el-aside width="250px" id="index-sidebar">
-                    <el-menu default-active="4" class="index-aside" @open="handleOpen" @close="handleClose">
+                    <el-menu default-active="1" class="index-aside" @open="handleOpen" @close="handleClose">
                         <el-menu-item index="1" @click="gotoRoute('apifind')">
                             <template #title>
                                 <el-icon>
